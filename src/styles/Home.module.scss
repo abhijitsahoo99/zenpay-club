@@ -1,8 +1,19 @@
-.landing {
+.home {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   gap: 0.5rem;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  & h1 {
+    font-weight: 600;
+    font-size: 3rem;
+  }
 }
