@@ -1,6 +1,7 @@
 import styles from "@/styles/Home.module.scss";
 import Meteors from "@/components/magicui/meteors";
 import ShimmerButton from "@/components/magicui/shimmer-button";
+import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 
 const zenpay: React.FC = () => {
   return (
@@ -10,14 +11,21 @@ const zenpay: React.FC = () => {
       </div>
       <div className={styles.landing}>
         <h1>zenpay</h1>
-        <p>all in one payment aggregator</p>
-        <div>
-          <ShimmerButton className="shadow-2xl mt-3">
-            <span className="whitespace-pre-wrap text-center text-base font-medium leading-none tracking-tight text-white px-0.5">
-              get started
-            </span>
-          </ShimmerButton>
-        </div>
+        <p className={styles.description}>all in one payment aggregator</p>
+      </div>
+      <div className={styles.creds}>
+        <ShimmerButton className="shadow-2xl mt-3">
+          <span className="whitespace-pre-wrap text-center text-base font-medium leading-none tracking-tight text-white px-0.5">
+            get started
+          </span>
+        </ShimmerButton>
+
+        <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-500 hover:dark:text-neutral-400 cursor-pointer">
+          <span>
+            {" "}
+            already a member? <a href="">signin</a>
+          </span>
+        </AnimatedShinyText>
       </div>
     </div>
   );
