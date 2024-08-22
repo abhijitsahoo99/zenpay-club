@@ -1,29 +1,66 @@
 .home {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  gap: 0.5rem;
-}
 
-.landing {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-
-  & h1 {
-    font-weight: 600;
-    font-size: 5rem;
+  @media (max-width: 800px) {
+    flex-direction: column;
   }
 }
-.description {
-  font-weight: 600;
-  font-size: 1.5rem;
+
+.landing_left,
+.landing_right {
+  width: 50%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media (max-width: 800px) {
+    width: 100%;
+    height: 50%;
+    overflow-y: hidden;
+  }
+}
+.landing_left {
+  background-color: rgb(226, 232, 240);
+
+  @media (max-width: 800px) {
+    align-items: center;
+  }
 }
 
-.creds {
-  display: flex;
-  align-items: baseline;
+.landing_right {
+  margin-bottom: 3rem;
+  @media (max-width: 800px) {
+    align-items: left;
+  }
+}
+
+.description_lg {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.description_sm {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.description_r_lg {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.description_r_sm {
+  font-size: 1.25rem;
+}
+
+.shimmer_button_container {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.shimmer_button {
+  width: 100%;
 }

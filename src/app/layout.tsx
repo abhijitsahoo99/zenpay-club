@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import Appbar from "@/components/Appbar";
 
 const inter = Inter({ subsets: ["latin"] });
 const gilroy = localFont({
@@ -20,7 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={gilroy.className}>{children}</body>
+      <body className={gilroy.className}>
+        <Appbar />
+        {children}
+      </body>
     </html>
   );
 }
