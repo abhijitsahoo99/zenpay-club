@@ -1,8 +1,21 @@
+"use client";
 import styles from "@/styles/Home.module.scss";
 import Meteors from "@/components/magicui/meteors";
 import ShimmerButton from "@/components/magicui/shimmer-button";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { useRouter } from "next/navigation";
 
 const zenpay: React.FC = () => {
+  const { publicKey } = useWallet();
+  const router = useRouter();
+  const handleGetStarted = () => {
+    if (!publicKey) {
+      alert("please connect your wallet to get started");
+    } else {
+      router.push("/onboard");
+    }
+  };
+
   return (
     <>
       <div className="fixed top-0 left-0">
@@ -17,7 +30,10 @@ const zenpay: React.FC = () => {
             powered by solana network, zenpay is your one stop gateway for
             receiving payments in crypto
           </p>
-          <div className={styles.shimmer_button_container}>
+          <div
+            className={styles.shimmer_button_container}
+            onClick={handleGetStarted}
+          >
             <ShimmerButton className={styles.shimmer_button}>
               <span className={styles.button_text}>get started</span>
             </ShimmerButton>
